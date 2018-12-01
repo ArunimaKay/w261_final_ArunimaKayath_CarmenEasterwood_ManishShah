@@ -1,0 +1,47 @@
+1.	URL:	https://www.dropbox.com/s/s4x7wp8gjsh021d/TISTRespPredAds-Chappelle-CTR-Prediction-2014Paper.pdf?dl+=0
+	Title:	Simple and scalable response prediction for display advertising
+	Data:	Criteo (different dataset from ours)
+	Algo:	Logistic Regression
+
+2.	URL:	https://www.csie.ntu.edu.tw/~r01922136/slides/ffm.pdf
+	Title:	Field-aware Factorization Machines
+	Data:	None - just some toy examples
+	Algo:	Factorization Machine
+
+3.	URL:	https://www.dropbox.com/s/iozods194twg2pv/MLParis2015-excellent-Sldies.pdf?dl=0
+	Title:	libFM & Factorization Machines
+	Data:	Toy example of movie ratings
+	Algo:	Factorization Machine
+
+4.	URL:	http://statweb.stanford.edu/~jhf/ftp/trebst.pdf
+	Title:	Greedy Function Approximation: A Gradient Boosted Machine
+	Data:	Theoretical - no data
+	Algo:	Gradient-descent "boosting" paradigm for least-squares, least-absolute-deviation, and Huber-M loss functions for regression, and multi-class logistic likelihood for classification
+
+5.	URL:	https://www.dropbox.com/s/2n8uekjwpaur3bj/Deep-Learning-for-Criteo-Documentation.pdf?dl=0
+	Title:	Click-through rate prediction using an ensemble of neural networks
+	Data:	Criteo (same as ours; 4th place in Kaggle contest)
+	Algo:	Neural network (+ significant preprocessing)
+
+6.	URL:	https://arxiv.org/pdf/1711.01377.pdf
+	Title:	An Ensemble-Based Approach to Click-Through Rate
+Prediction for Promoted Listings at Etsy
+	Data:	Etsy
+	Algo:	Neural network
+
+7.	URL:	https://arxiv.org/pdf/1701.04099.pdf
+	Title:	Field-aware Factorization Machines in a Real-world Online Advertising System
+	Data:	Criteo (different dataset from ours)
+	Algo:	Factorization Machine
+
+8.	URL:	https://research.fb.com/publications/practical-lessons-from-predicting-clicks-on-ads-at-facebook/
+	Title:	Practical Lessons from Predicting Clicks on Ads at Facebook
+	Data:	Facebook
+	Algo:	Decision Trees + Logistic Regression (results combined)
+
+9.	URL:	https://www.csie.ntu.edu.tw/~r01922136/slides/kaggle-avazu.pdf
+	Title:	4 Idiots’ Approach for Click-through Rate Prediction
+	Data:	Criteo (same as ours; 1st place in Kaggle contest)
+	Algo:	Factorization machine
+
+

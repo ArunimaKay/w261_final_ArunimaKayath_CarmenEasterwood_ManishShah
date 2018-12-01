@@ -1,0 +1,29 @@
+SUMMARY OF PAPERS 1, 8, 9
+
+1. Simple and scalable response prediction for display advertising (Log Reg on a Criteo dataset)
+	+ All continuous variables are quantized (binned)
+	+ Logistic regression solved using gradient descent
+	+ Categorical features are hashed to reduce dimensionality. Also suggests taking only the most important values (by count or mutual information), but that requires using a dictionary.
+	+ Uses "conjunction" features, i.e. interactions
+	+ Use an adaptation of SVMs for multi-task learning???
+	+ Use conditional mutual information for feature selection
+	+ Use Hadoop AllReduce instead of MapReduce -> better suited to iterative ML algorithms
+
+8.	Practical Lessons from Predicting Clicks on Ads at Facebook
+	+ Combines decision trees with logistic regression, outperforming either of these methods on its own by over 3%
+	+ "the most important thing is to have the right features: those capturing historical information about the user or ad dominate other types of features"
+	+  Input features are transformed by boosted decision trees. The output of each individual tree is treated as a categorical input feature to a sparse linear classifier.
+	+ "We treat each individual tree as a categorical feature that takes as value the index of the leaf an instance ends up falling in."
+	+ Use Normalized Entropy as evaluation metric = avg logloss per impression / avg logloss if the model predicted the background CTR for every impression. (Lower values are better) Could also use Area Under ROC.
+	+ Train on one day of data, and evaluate on the six consecutive days and compute NE on each.
+	+ Test 1-2000 trees and limit trees to 12 leaves. No significant benefit for >1000 trees. Top 10 features account for ~50% of feature importance.
+	+ Try out uniform subsampling and negative down sampling to reduce data size. Data samples can perform almost as well as the full data.
+
+9.	4 Idiots’ Approach for Click-through Rate Prediction
+	+ Winner of the Criteo Kaggle competition
+	+ Merged two teams -> used an ensemble of the 2 teams' models. These slides describe one of the teams' models.
+	+ They knew the column labels, so were able to create some additional features that made sense (e.g. click history for a user)... we can't do this without knowing which columns are which.
+	+ Hashed the text features, then took the last 6 digits of the hashed value
+	+ Use a field-aware factorization machine (FFM) (theoretical details not discussed in the slides)
+	+ Ensemble of 20 models -- each has different settings for: data subset, feature engineering, FFM. Each model generates a predicted probability for each ad impression, and those are averaged together for the final prediction.
+	+ Tuned hyperparameters by running experiments on a 10% subset of the data
